@@ -83,6 +83,7 @@ GEM
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     capybara (3.39.2)
       addressable
       matrix
@@ -92,6 +93,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    coderay (1.1.3)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -107,6 +109,9 @@ GEM
       tzinfo
     factory_bot (6.4.2)
       activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.2)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     foreman (0.87.2)
     fugit (1.9.0)
       et-orbi (~> 1, >= 1.2.7)
@@ -119,7 +124,6 @@ GEM
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
-    interactor (3.1.2)
     io-console (0.7.1)
     irb (1.11.0)
       rdoc
@@ -137,6 +141,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
@@ -164,6 +169,14 @@ GEM
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.4)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -302,12 +315,13 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  factory_bot
+  factory_bot_rails
   foreman
   importmap-rails
-  interactor
   jbuilder
   pg (~> 1.1)
+  pry-byebug
+  pry-rails
   puma (>= 5.0)
   rails (~> 7.1.2)
   rspec-rails
