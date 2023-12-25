@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root 'exchange_rate#index'
+  get 'difference', to: 'exchange_rate#difference'
 
   mount Sidekiq::Web => '/sidekiq'
 end
