@@ -5,8 +5,10 @@ class CreateExchangeRates < ActiveRecord::Migration[7.1]
     create_table :exchange_rates do |t|
       t.enum :current_rate, enum_type: :rate, default: :rub_usd, null: false
       t.decimal :current_value, null: false, default: 0, scale: 2, precision: 14
-      t.date :parse_at
+      t.date :parse_at, null: false
     end
+
+    add_index :exchange_rates, [:current_rate, :parse_at], unique: true
   end
 
   def down

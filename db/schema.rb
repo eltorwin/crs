@@ -21,7 +21,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_23_043638) do
   create_table "exchange_rates", force: :cascade do |t|
     t.enum "current_rate", default: "rub_usd", null: false, enum_type: "rate"
     t.decimal "current_value", precision: 14, scale: 2, default: "0.0", null: false
-    t.date "parse_at"
+    t.date "parse_at", null: false
+    t.index ["current_rate", "parse_at"], name: "index_exchange_rates_on_current_rate_and_parse_at", unique: true
   end
 
 end
