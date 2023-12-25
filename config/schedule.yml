@@ -1,0 +1,3 @@
+ExchangeParseJob:
+  cron: '0 2 * * *' # every day
+  class: ExchangeParseJob
