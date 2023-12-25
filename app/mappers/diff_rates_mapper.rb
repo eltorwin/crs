@@ -25,10 +25,14 @@ class DiffRatesMapper
         date.end_of_week
       ).to_a
 
-      diffs << prepare_diff_data(
-        scope.first.current_value, # start week value
-        scope.last.current_value # end week value
-      )
+      if scope.present?
+        diffs << prepare_diff_data(
+          scope.first.current_value, # start week value
+          scope.last.current_value # end week value
+        )
+      else
+        diffs << nil
+      end
     end
 
     diffs.reverse

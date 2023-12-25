@@ -16,5 +16,8 @@
           td = rate_name
           - diffs.each do |value, percent|
             td 
-              | #{number_with_precision(value, precision: 2)} ₽&nbsp;
-              | #{number_to_percentage(percent, format: "(%n %)")}
+              - if value.present?
+                  | #{number_with_precision(value, precision: 2)} ₽&nbsp;
+                  | #{number_to_percentage(percent, format: "(%n %)")}
+              - else
+                | Нет данных
