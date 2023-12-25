@@ -49,6 +49,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'open-uri'
 end
 
 group :development do
