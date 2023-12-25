@@ -1,24 +1,17 @@
-# README
+# Установка
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. В файле config/database.yml изменить user и password от бд на свой
 
-Things you may want to cover:
+2. В консоли выполнить
+```
+bundle install
 
-* Ruby version
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. Запуск
+```
+foreman start
+```
