@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'sassc-rails'
 gem "rails", "~> 7.1.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -65,6 +66,7 @@ group :development do
   gem 'slim-rails'
   gem 'sidekiq'
   gem 'sidekiq-cron'
+  gem 'd3c3-rails'
 end
 
 group :test do
