@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "start"
+
+dates = (Date.current - 1.month)..Date.current
+
+dates.each do |day|
+    puts "date #{day} fill"
+    CbrParseService.new(day).call
+end
+
+puts "end"
