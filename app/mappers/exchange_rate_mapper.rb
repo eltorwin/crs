@@ -1,6 +1,6 @@
 class ExchangeRateMapper
-  def initialize(scope)
-    @scope = scope
+  def initialize(date_start, date_end)
+    @scope = interval_rates(date_start, date_end)
     @dates = ['x']
     @rates = {
       rub_usd: ['RUB/USD'],
@@ -18,5 +18,11 @@ class ExchangeRateMapper
     end
 
     @rates.values << @dates.uniq!
+  end
+
+  private
+
+  def interval_rates(date_start, date_end)
+    ExchangeRate.where('parse_at between ? and ?', date_start, date_end).order(parse_at: :asc)
   end
 end
